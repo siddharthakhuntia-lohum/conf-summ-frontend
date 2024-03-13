@@ -20,7 +20,6 @@ export default function VideoSubmitForm() {
     let errors: { videoURL?: string } = {};
     if (!videoURL) {
       errors.videoURL = "Video URL is required";
-
     } else if (
       !videoURL.match(/^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/)
     ) {
@@ -88,9 +87,6 @@ export default function VideoSubmitForm() {
           )}
         </div>
       </form>
-      {/* {isModalOpen && (
-        
-      )} */}
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );

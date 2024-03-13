@@ -37,7 +37,7 @@ export function SummaryCard({ videoData }: { videoData: VideoData }) {
           <Image
             src={thumbnail_url}
             alt="Video Thumbnail"
-            className="w-full rounded-lg m-4 lg:m-0"
+            className="w-full rounded-lg  lg:m-0"
             width={400}
             height={400}
           />
