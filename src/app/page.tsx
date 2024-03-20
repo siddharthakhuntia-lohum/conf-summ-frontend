@@ -6,7 +6,9 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchItems = async () => {
-  const response = await axios.get("http://localhost:3030/summaries");
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_NODE_API_SERVER}/summaries`
+  );
   return response;
 };
 
@@ -47,7 +49,7 @@ export default function Home() {
 
   useEffect(() => {
     // console.log("allVideoQuery");
-    //TODO: Check why this console is being called multiple times (3 times) 
+    //TODO: Check why this console is being called multiple times (3 times)
     startTransition(() => {
       if (allVideoQuery.isSuccess) {
         setVideoItems(allVideoQuery.data.data);

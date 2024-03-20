@@ -17,7 +17,7 @@ import { FiBookOpen } from "react-icons/fi";
 
 const fetchVideo = ({ queryKey }: QueryFunctionContext<[string, string]>) => {
   const [, id] = queryKey;
-  return axios.get(`http://localhost:3030/get-summary`, {
+  return axios.get(`${process.env.NEXT_PUBLIC_NODE_API_SERVER}/get-summary`, {
     params: { videoId: id },
   });
 };
@@ -40,7 +40,8 @@ export default function BlogPost({ params }: { params: { id: string } }) {
 
   // console.log(videoSummary.data);
 
-  const { summary, title, created_at, thumbnail_url, publisher } = videoSummary.data?.data;
+  const { summary, title, created_at, thumbnail_url, publisher } =
+    videoSummary.data?.data;
   // {
   //   summary:
   //     'The lyrics of the song "Not Done Fighting" convey a message of resilience and determination. The artist expresses a feeling of being overwhelmed by challenges but refuses to give up. They reflect on their past struggles and how far they have come, from living in difficult circumstances to now laughing all the way to the bank. The artist acknowledges the support of both rich and poor friends and emphasizes the importance of staying true to oneself. Despite facing opposition and feeling misunderstood, the artist remains steadfast in their fight and refuses to walk away or lose everything. The lyrics convey a sense of strength, defiance, and perseverance in the face of adversity.',

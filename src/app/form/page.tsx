@@ -54,7 +54,7 @@ export default function VideoSubmitForm() {
     if (isFormValid) {
       try {
         const videoSummary = await axios.post(
-          "http://localhost:3030/get-summary",
+          `${process.env.NEXT_PUBLIC_NODE_API_SERVER}/get-summary`,
           {
             videoURL,
             videoSource,
